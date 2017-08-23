@@ -41,17 +41,40 @@ switch(command) {
       if(!err){
         for(var i = 0; i < tweets.length; i++){
             var date = tweets[i].created_at;
-          console.log("@PokeBearOVRKILL: " + tweets[i].text + " Created At: " + date.substring(0, 19));
+
+          console.log("@PokeBearOVRKILL: " + tweets[i].text + "\nCreated At: " + date.substring(20) + 1);
+
           console.log("+++++++++++++++++++++++");
           
         }
       }else{
-        console.log('Error occurred');
+        console.log("Error Will Robinson!!");
       }
     });
   }
 
   //Spotify
+  function spotifyData() {
+    spotify.search({type: "track", query: song}, function(err, data){
+      if(!err){
+        for(var i = 0; i < data.tracks.items.length; i++){
+          var trackData = data.tracks.items[i];
+         
+          console.log("Artist: " + songData.artists[0].name);
+        
+          console.log("Song: " + songData.name);
+         
+          console.log("Preview Link: " + songData.preview_link);
+        
+          console.log("Album: " + songData.album.name);
 
+          console.log("+++++++++++++++++++");
+          
+        }
+      } else{
+        console.log("Error Will Robinson!!");
+      }
+    });
+  }
 
-  //Movies
+  //Movies needs to be finished and logged 
